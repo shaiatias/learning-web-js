@@ -1,0 +1,14 @@
+<table>
+
+  <tr *ngFor="let row of board | async">
+
+    <td *ngFor="let cell of row">
+      <button [ngStyle]="{ 
+        'display': cell.visible ? 'table-cell' : 'none',
+        'background-color': cell.color
+    }" (click)="moveElement(cell)">{{ cell.text }}</button>
+    </td>
+
+  </tr>
+
+</table>

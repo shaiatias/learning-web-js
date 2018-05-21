@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div *ngFor="let cell of board | async; trackBy: itemTrackBy"
+       class="cell"
+       [ngStyle]="{
+        'top': cell.row * 50 + 'px',
+        'left': cell.column * 50 + 'px'
+      }">
+    
+    <button
+    [ngStyle]="{
+      'background-color': cell.color
+    }"
+    (click)="moveElement(cell)"
+    >{{ cell.text }}</button>
+
+  </div>
+
+</div>
