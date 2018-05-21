@@ -1,0 +1,19 @@
+<div>
+  <h1>4x4 GAME</h1>
+  <button (click)="restart()">restart</button>
+
+  <h2>ME</h2>
+
+  <app-game [board]="myBoard | async" [haveControl]="'true'"></app-game>
+
+  <hr />
+
+  <h2>THE OTHERS</h2>
+
+  <div class="others">
+    <app-game *ngFor="let board of allBoard | async" [board]="board" [haveControl]="'false'"></app-game>
+  </div>
+
+  
+
+</div>
